@@ -1,24 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import Container from "./Container";
+import Header from "./Header";
+import Navigation from "./Navigation";
+import Form from "./Form";
+import Footer from "./Footer";
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Header title="Przelicznik walut"></Header>
+      <Navigation />
+      <Form />
+      <Footer text="© Copyright 2022 by Sciuszek - wszelkie prawa zastrzeżone"></Footer>
+    </Container>
   );
 }
 
