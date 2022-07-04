@@ -1,6 +1,6 @@
 import "./style.css";
 
-const Result = () => {
+const Result = ({result}) => {
 
     return (
         <span className="form__Result" > Otrzymasz: </span>
