@@ -1,9 +1,11 @@
 import "./style.css";
 
-const Result = () => (
+const Result = () => {
 
-    <span className="form__Result">Otrzymasz:</span>
+    return (
+        <span className="form__Result" > Otrzymasz: </span>
 
-);
+    )
+};
 
 export default Result;

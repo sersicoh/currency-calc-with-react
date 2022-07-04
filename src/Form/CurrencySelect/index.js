@@ -1,11 +1,26 @@
 import "./style.css";
 
-const CurrencySelect = ({ currency }) => {
+const CurrencySelect = ({ currency, onChange, currencies }) => {
 
     return (
-        <select name="currency" className="form__Data">
-            <option value={currency[0].code}>{currency[0].code}</option>
-            <option value={currency[0].code}>{currency[1].code}</option>
+        <select
+            name="currency"
+            className="form__Data"
+            value={currency}
+            onChange={onChange}
+        >
+            {currencies.map(
+                (currency) => (
+                    <option
+                        key={currency.code}
+                        value={currency.code}
+                    >
+                        {currency.name}
+                    </option>
+                )
+
+            )}
+
         </select>
     );
 
