@@ -9,19 +9,19 @@ import Button from "./Button"
 const Form = () => {
 
     const currencies = [
-        { code: "EUR", name: "Euro", value: 4.77 },
-        { code: "USD", name: "Dolar", value: 4.02 },
-        { code: "GBP", name: "Funt", value: 5.02 },
+        { id: 0, code: "EUR", name: "Euro", value: 4.77 },
+        { id: 1, code: "USD", name: "Dolar", value: 4.02 },
+        { id: 2, code: "GBP", name: "Funt", value: 5.02 },
     ];
 
     const [amount, setAmount] = useState("");
-    const [currencyValue, setCurrencyValue] = useState(currencies[0].value);
     const [currencyCode, setCurrencyCode] = useState(currencies[0].code);
     const [result, setResult] = useState();
 
-    const calculate = () => (
-        setResult(`${(amount / currencyValue).toFixed(2).replace("\.", ",")} ${currencyCode}`)
-    );
+    const calculate = () => {
+        const currenciesElement = currencies.filter(element => element.code === currencyCode);
+        setResult(`${(amount / currenciesElement[0].value).toFixed(2).replace("\.", ",")} ${currencyCode}`)
+    }
 
     const onFormSubmit = (event) => {
         event.preventDefault();
@@ -34,11 +34,8 @@ const Form = () => {
                 legend="Wybierz walutę do przeliczenia"
                 span="Wybierz jedną:"
                 body={<CurrencySelect
-                    currency={currencyValue}
-                    onChange={({ target }) => {
-                        setCurrencyValue(target.value)
-                        setCurrencyCode(target.code)
-                    }}
+                    currencyValue={currencyCode}
+                    onChange={({ target }) => { setCurrencyCode(target.value) }}
                     currencies={currencies} />}
             />
             <FormSection
