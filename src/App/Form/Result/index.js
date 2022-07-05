@@ -5,8 +5,12 @@ export const Result = ({ result }) => (
     <span className="form__Result" >
         {result !== undefined && (
             <>
-                {result.sourceAmount.toFixed(2)}&nbsp;PLN&nbsp;=&nbsp;
-                {result.targetAmount.toFixed(2)}&nbsp;{result.currency}
+                {result.sourceAmount.toFixed(2)}&nbsp;PLN&nbsp;=
+                {" "}
+                <strong>
+                    {result.targetAmount.toFixed(2)}&nbsp;{result.currency}
+                </strong>
+
             </>
         )}
     </span>
