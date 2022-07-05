@@ -1,7 +1,7 @@
 # Currency-calc-with-react
 
 ## Demo
-[link to: to-do-list-with-react](https://sersicoh.github.io/to-do-list-react/)
+[link to: Currency-calc-with-react](https://sersicoh.github.io/currency-calc-with-react/)
 
 ## Description
 As one of my homework, I was going to make a small and simple currency calculator.
