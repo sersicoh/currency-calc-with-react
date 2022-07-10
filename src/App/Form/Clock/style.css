@@ -1,0 +1,7 @@
+.clock {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    font-family: 'Courier New', Courier;
+    font-size: smaller;
+}
