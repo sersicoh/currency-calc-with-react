@@ -24,13 +24,13 @@ function App() {
 
   return (
     <div className="app">
-      <Header title="Przelicznik walut"></Header>
+      <Header title="Przelicznik walut" />
       <Navigation />
       <Form
         result={result}
         calculateResult={calculateResult}
       />
-      <Footer text="© Copyright 2022 by Sciuszek - wszelkie prawa zastrzeżone"></Footer>
+      <Footer text="© Copyright 2022 by Sciuszek - wszelkie prawa zastrzeżone" />
     </div>
 
   );
