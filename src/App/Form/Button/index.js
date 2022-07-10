@@ -1,11 +1,9 @@
 import "./style.css";
 
-const Button = ({ calculate }) => {
+const Button = () => (
+    <button
+        className="form__Button"
+    >Przelicz</button>
+);
 
-    return (
-        <button
-            className="form__Button"
-        >Przelicz</button>
-    );
-}
 export default Button;
