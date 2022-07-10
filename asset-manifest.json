@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/currency-calc-with-react/static/css/main.8777afa6.css",
-    "main.js": "/currency-calc-with-react/static/js/main.eafbdecd.js",
+    "main.js": "/currency-calc-with-react/static/js/main.b0b049fd.js",
     "static/js/787.9f02b366.chunk.js": "/currency-calc-with-react/static/js/787.9f02b366.chunk.js",
     "static/media/wood_pattern.png": "/currency-calc-with-react/static/media/wood_pattern.262d2913ff13b4e27f13.png",
     "index.html": "/currency-calc-with-react/index.html",
     "main.8777afa6.css.map": "/currency-calc-with-react/static/css/main.8777afa6.css.map",
-    "main.eafbdecd.js.map": "/currency-calc-with-react/static/js/main.eafbdecd.js.map",
+    "main.b0b049fd.js.map": "/currency-calc-with-react/static/js/main.b0b049fd.js.map",
     "787.9f02b366.chunk.js.map": "/currency-calc-with-react/static/js/787.9f02b366.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.8777afa6.css",
-    "static/js/main.eafbdecd.js"
+    "static/js/main.b0b049fd.js"
   ]
 }
