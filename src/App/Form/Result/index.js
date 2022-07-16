@@ -1,8 +1,8 @@
-import "./style.css";
+import { ResultSpan } from "./styled";
 
 export const Result = ({ result }) => (
 
-    <span className="form__Result" >
+    <ResultSpan className="form__Result" >
         {result !== undefined && (
             <>
                 {result.sourceAmount.toFixed(2)}&nbsp;PLN&nbsp;=
@@ -13,7 +13,7 @@ export const Result = ({ result }) => (
 
             </>
         )}
-    </span>
+    </ResultSpan>
 
 );
 
