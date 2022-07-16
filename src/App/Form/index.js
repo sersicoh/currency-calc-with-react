@@ -7,15 +7,13 @@ import CurrencySelect from "./CurrencySelect";
 import Button from "./Button";
 import { Result } from "./Result";
 import Clock from "./Clock";
-import { useDate } from "./useDate";
+
 
 
 export const Form = ({ result, calculateResult }) => {
 
     const [currency, setCurrency] = useState(currencies[0].short);
     const [amount, setAmount] = useState("");
-
-    const { date, time } = useDate();
 
     const onFormSubmit = (event) => {
         event.preventDefault();
@@ -24,7 +22,7 @@ export const Form = ({ result, calculateResult }) => {
 
     return (
         <form className="form" onSubmit={onFormSubmit}>
-            <Clock date={date} time={time} />
+            <Clock/>
             <FormSection
                 legend="Wybierz walutę do przeliczenia"
                 span="Wybierz jedną:"

@@ -2,14 +2,14 @@ import { useState, useEffect } from "react";
 
 export const useDate = () => {
 
-    const [today, setDate] = useState(new Date());
+    const [today, setToday] = useState(new Date());
 
     const date = today.toLocaleDateString("pl", { weekday: 'long', day: "numeric", month: "long", year: "numeric" });
     const time = today.toLocaleTimeString();
 
     useEffect(() => {
         const timer = setInterval(() => {
-            setDate(new Date());
+            setToday(new Date());
         }, 1 * 1000);
 
         return () => {
@@ -17,7 +17,7 @@ export const useDate = () => {
         }
     }, []);
 
-    return ({ date, time });
+    return { date, time };
 };
 
 export default useDate;

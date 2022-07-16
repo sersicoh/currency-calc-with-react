@@ -1,10 +1,15 @@
-import "./style.css";
+import { StyledClock } from "./StyledClock";
+import { useDate } from "./useDate";
 
-const Clock = ({ date, time }) => (
 
-    <p className="clock">
-        Dzisiaj jest {date} {time}
-    </p>
 
-);
+const Clock = () => {
+
+    const date = useDate();
+
+    return (
+        <StyledClock>Dzisiaj jest {date.date} {date.time}</StyledClock>
+    );
+};
+
 export default Clock;

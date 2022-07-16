@@ -1,10 +1,9 @@
-import "./style.css";
+import { StyledHeader } from "./styled";
 
 const Header = ({ title }) => (
     <header
-        className="header"
         id="Strona-główna">
-        <h1 className="header__text">{title}</h1>
+        <StyledHeader>{title}</StyledHeader>
     </header >
 
 );
