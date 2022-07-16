@@ -1,9 +1,7 @@
-import "./style.css";
+import { StyledButton } from "./styled";
 
 const Button = () => (
-    <button
-        className="form__Button"
-    >Przelicz</button>
+    <StyledButton>Przelicz</StyledButton>
 );
 
 export default Button;
