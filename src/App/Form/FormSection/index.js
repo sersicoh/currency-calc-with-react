@@ -1,14 +1,13 @@
-import "./style.css";
-
+import { FormField, FormVariable } from "./styled";
 const FormSection = ({ legend, span, body }) => (
 
-    <fieldset className="form__Fieldset">
+    <FormField>
         <legend>{legend}</legend>
         <label>
-            <span className="form__Variables">{span}</span>
+            <FormVariable>{span}</FormVariable>
             {body}
         </label>
-    </fieldset>
+    </FormField>
 
 );
 
