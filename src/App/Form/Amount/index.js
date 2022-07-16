@@ -1,8 +1,6 @@
-import "./style.css";
-
 const Amount = ({ amount, onChange }) => (
 
-    < input
+    <input
         type="number"
         name="amount"
         value={amount}
