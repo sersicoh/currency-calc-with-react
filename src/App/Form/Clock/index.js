@@ -1,8 +1,6 @@
 import { StyledClock } from "./StyledClock";
 import { useDate } from "./useDate";
 
-
-
 const Clock = () => {
 
     const date = useDate();
