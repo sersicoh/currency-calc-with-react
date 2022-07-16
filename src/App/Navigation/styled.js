@@ -1,4 +1,6 @@
-.navigation {
+import styled from "styled-components";
+
+export const StyledNav = styled.nav`
     background-color: rgb(218, 160, 1);
     margin: 10px auto;
     border-radius: 20px;
@@ -7,9 +9,9 @@
     margin-bottom: 30px;
     padding: 0 20px;
     max-width: 600px;
-}
+`;
 
-.navigation__link {
+export const StyledNavigationLink = styled.a`
     font-size: 18px;
     font-weight: 400;
     text-shadow: 1px 0px 16px rgb(95, 0, 0);
@@ -22,4 +24,4 @@
     margin: 20px;
     border-radius: 5px;
     box-shadow: rgb(95, 0, 0) 0px 0px 10px 5px;
-}
+`;
