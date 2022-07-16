@@ -1,10 +1,10 @@
-import "./style.css";
+import { StyledClock } from "./StyledClock";
 
 const Clock = ({ date, time }) => (
 
-    <p className="clock">
+    <StyledClock>
         Dzisiaj jest {date} {time}
-    </p>
+    </StyledClock>
 
 );
 export default Clock;
