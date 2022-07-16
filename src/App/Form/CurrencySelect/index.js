@@ -1,11 +1,8 @@
-import "./style.css";
-
 const CurrencySelect = ({ currencyValue, onChange, currencies }) => {
 
     return (
         <select
             name="currency"
-            className="form__Data"
             value={currencyValue}
             onChange={onChange}
         >
