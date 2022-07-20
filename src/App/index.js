@@ -1,4 +1,4 @@
-import "./style.css";
+import { StyledApp } from "./styled";
 import { currencies } from "./currencies";
 import Header from "./Header";
 import Navigation from "./Navigation";
@@ -23,7 +23,7 @@ function App() {
   }
 
   return (
-    <div className="app">
+    <StyledApp>
       <Header title="Przelicznik walut" />
       <Navigation />
       <Form
@@ -31,7 +31,7 @@ function App() {
         calculateResult={calculateResult}
       />
       <Footer text="© Copyright 2022 by Sciuszek - wszelkie prawa zastrzeżone" />
-    </div>
+    </StyledApp>
 
   );
 }

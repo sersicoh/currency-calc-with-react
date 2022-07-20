@@ -1,4 +1,4 @@
-import { StyledClock } from "./StyledClock";
+import { StyledClock } from "./styled";
 import { useDate } from "./useDate";
 
 const Clock = () => {
