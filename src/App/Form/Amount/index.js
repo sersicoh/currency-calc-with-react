@@ -5,7 +5,6 @@ const Amount = ({ amount, onChange }) => (
         name="amount"
         value={amount}
         onChange={onChange}
-        className="form__Data js-input"
         required
         min="1"
         max="10000"
