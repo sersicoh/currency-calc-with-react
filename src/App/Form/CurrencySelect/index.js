@@ -1,23 +1,24 @@
 const CurrencySelect = ({ currencyValue, onChange, currencies }) => {
 
-    return (
-        <select
+      return (
+         <select
             name="currency"
             value={currencyValue}
             onChange={onChange}
-        >
-            {currencies.map(
-                (currency) => (
-                    <option
-                        key={currency.short}
-                        value={currency.short}
-                    >
-                        {currency.name}
-                    </option>
-                )
+         >
+            {currencies.currenciesCode.map(
+               (currency) => (
+                  <option
+                     key={currency}
+                     value={currency}
+                  >
+                     {currency}
+                  </option>
+               )
             )}
-        </select>
-    );
-}
+         </select>
+      )
+
+};
 
 export default CurrencySelect;
