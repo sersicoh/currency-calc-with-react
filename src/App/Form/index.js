@@ -1,5 +1,4 @@
 import "./style.css";
-import { currencies } from "../currencies";
 import { useState } from "react";
 import FormSection from "./FormSection";
 import Amount from "./Amount";
@@ -10,9 +9,9 @@ import Clock from "./Clock";
 
 
 
-export const Form = ({ result, calculateResult }) => {
+export const Form = ({ result, calculateResult, currencies }) => {
 
-    const [currency, setCurrency] = useState(currencies[0].short);
+    const [currency, setCurrency] = useState("USD");
     const [amount, setAmount] = useState("");
 
     const onFormSubmit = (event) => {
@@ -22,14 +21,15 @@ export const Form = ({ result, calculateResult }) => {
 
     return (
         <form className="form" onSubmit={onFormSubmit}>
-            <Clock/>
+            <Clock />
             <FormSection
                 legend="Wybierz walutę do przeliczenia"
                 span="Wybierz jedną:"
                 body={<CurrencySelect
                     value={currency}
                     onChange={({ target }) => { setCurrency(target.value) }}
-                    currencies={currencies} />}
+                    currencies={currencies}
+                />}
             />
             <FormSection
                 legend="Podaj kwotę do przeliczenia"

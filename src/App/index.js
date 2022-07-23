@@ -1,23 +1,23 @@
 import { StyledApp } from "./styled";
-import { currencies } from "./currencies";
 import Header from "./Header";
 import Navigation from "./Navigation";
 import { Form } from "./Form";
 import Footer from "./Footer";
 import { useState } from "react";
+import { useCurrencies } from "./useCurrencies";
 
 function App() {
 
   const [result, setResult] = useState();
+  const currencies = useCurrencies();
 
   const calculateResult = (currency, amount) => {
-    const rate = currencies
-      .find(({ short }) => short === currency)
-      .rate
+
+    const rate = currencies.rates[currency];
 
     setResult({
       sourceAmount: +amount,
-      targetAmount: amount / rate,
+      targetAmount: amount * rate,
       currency,
     });
   }
@@ -29,6 +29,7 @@ function App() {
       <Form
         result={result}
         calculateResult={calculateResult}
+        currencies={currencies}
       />
       <Footer text="© Copyright 2022 by Sciuszek - wszelkie prawa zastrzeżone" />
     </StyledApp>
