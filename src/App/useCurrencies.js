@@ -32,7 +32,7 @@ export const useCurrencies = () => {
             }
         });
 
-        setTimeout(downloadData, 1500);
+        setTimeout(downloadData, 3000);
     }, []);
 
     return data;
