@@ -19,28 +19,35 @@ export const Form = ({ result, calculateResult, currencies }) => {
         calculateResult(currency, amount);
     };
 
-    return (
-        <form className="form" onSubmit={onFormSubmit}>
-            <Clock />
-            <FormSection
-                legend="Wybierz walutę do przeliczenia"
-                span="Wybierz jedną:"
-                body={<CurrencySelect
-                    value={currency}
-                    onChange={({ target }) => { setCurrency(target.value) }}
-                    currencies={currencies}
-                />}
-            />
-            <FormSection
-                legend="Podaj kwotę do przeliczenia"
-                span="Kwota:"
-                body={<Amount amount={amount} onChange={({ target }) => setAmount(target.value)} />}
-            />
-            <Button />
-            <Result result={result} />
-        </form>
+    if(currencies.status === "ok"){
+        return (
+            <form className="form" onSubmit={onFormSubmit}>
+                <Clock />
+                <FormSection
+                    legend="Wybierz walutę do przeliczenia"
+                    span="Wybierz jedną:"
+                    body={<CurrencySelect
+                        value={currency}
+                        onChange={({ target }) => { setCurrency(target.value) }}
+                        currencies={currencies}
+                    />}
+                />
+                <FormSection
+                    legend="Podaj kwotę do przeliczenia"
+                    span="Kwota:"
+                    body={<Amount amount={amount} onChange={({ target }) => setAmount(target.value)} />}
+                />
+                <Button />
+                <Result result={result} />
+            </form>
+    
+        )
 
-    )
+    }else{
+        return(<span>Ładowanie</span>)
+    }
+
+
 };
 
 export default Form;
