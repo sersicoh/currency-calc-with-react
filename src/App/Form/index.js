@@ -7,6 +7,7 @@ import Button from "./Button";
 import { Result } from "./Result";
 import Clock from "./Clock";
 import ExternalScreen from "./ExternalScreen"
+import CurrienciesDate from "./CurrenciesDate"
 
 export const Form = ({ result, calculateResult, currencies }) => {
 
@@ -19,11 +20,11 @@ export const Form = ({ result, calculateResult, currencies }) => {
    };
 
    switch (currencies.status) {
-
       case "ok":
          return (
             <FormBody onSubmit={onFormSubmit}>
                <Clock />
+               
                <FormSection
                   legend="Wybierz walutę do przeliczenia"
                   span="Wybierz jedną:"
@@ -35,15 +36,15 @@ export const Form = ({ result, calculateResult, currencies }) => {
                />
                <FormSection
                   legend="Podaj kwotę do przeliczenia"
-                  span="Kwota:"
+                  span="Kwota w zł:"
                   body={<Amount amount={amount} onChange={({ target }) => setAmount(target.value)} />}
                />
-               <Button />StyledExternal
+               <CurrienciesDate date={currencies.date} />
+               <Button />
                <Result result={result} />
             </FormBody>
 
          );
-
       case "loading":
          return (
             <ExternalScreen message={"Ładuję aktualne stawki walut z serwera zewnętrznego"} />
