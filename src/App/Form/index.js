@@ -1,4 +1,4 @@
-import "./style.css";
+import { FormBody } from "./styled"
 import { useState } from "react";
 import FormSection from "./FormSection";
 import Amount from "./Amount";
@@ -19,9 +19,9 @@ export const Form = ({ result, calculateResult, currencies }) => {
         calculateResult(currency, amount);
     };
 
-    if(currencies.status === "ok"){
+    if (currencies.status === "ok") {
         return (
-            <form className="form" onSubmit={onFormSubmit}>
+            <FormBody onSubmit={onFormSubmit}>
                 <Clock />
                 <FormSection
                     legend="Wybierz walutę do przeliczenia"
@@ -39,12 +39,12 @@ export const Form = ({ result, calculateResult, currencies }) => {
                 />
                 <Button />
                 <Result result={result} />
-            </form>
-    
+            </FormBody>
+
         )
 
-    }else{
-        return(<span>Ładowanie</span>)
+    } else {
+        return (<span>Ładowanie</span>)
     }
 
 

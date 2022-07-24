@@ -1,4 +1,6 @@
-.form{
+import styled from "styled-components";
+
+export const FormBody = styled.form`
     border: 0px solid rgb(95, 0, 0);
     margin: 0 auto;
     margin-bottom: 30px;
@@ -8,4 +10,4 @@
     background-color: rgb(218, 160, 1);
     max-width: 600px;
     color: rgb(96 0 0);
-}
+`;
