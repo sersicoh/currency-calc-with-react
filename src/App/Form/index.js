@@ -6,47 +6,53 @@ import CurrencySelect from "./CurrencySelect";
 import Button from "./Button";
 import { Result } from "./Result";
 import Clock from "./Clock";
-
-
+import ExternalScreen from "./ExternalScreen"
 
 export const Form = ({ result, calculateResult, currencies }) => {
 
-    const [currency, setCurrency] = useState("USD");
-    const [amount, setAmount] = useState("");
+   const [currency, setCurrency] = useState("USD");
+   const [amount, setAmount] = useState("");
 
-    const onFormSubmit = (event) => {
-        event.preventDefault();
-        calculateResult(currency, amount);
-    };
+   const onFormSubmit = (event) => {
+      event.preventDefault();
+      calculateResult(currency, amount);
+   };
 
-    if (currencies.status === "ok") {
-        return (
+   switch (currencies.status) {
+
+      case "ok":
+         return (
             <FormBody onSubmit={onFormSubmit}>
-                <Clock />
-                <FormSection
-                    legend="Wybierz walutę do przeliczenia"
-                    span="Wybierz jedną:"
-                    body={<CurrencySelect
-                        value={currency}
-                        onChange={({ target }) => { setCurrency(target.value) }}
-                        currencies={currencies}
-                    />}
-                />
-                <FormSection
-                    legend="Podaj kwotę do przeliczenia"
-                    span="Kwota:"
-                    body={<Amount amount={amount} onChange={({ target }) => setAmount(target.value)} />}
-                />
-                <Button />
-                <Result result={result} />
+               <Clock />
+               <FormSection
+                  legend="Wybierz walutę do przeliczenia"
+                  span="Wybierz jedną:"
+                  body={<CurrencySelect
+                     value={currency}
+                     onChange={({ target }) => { setCurrency(target.value) }}
+                     currencies={currencies}
+                  />}
+               />
+               <FormSection
+                  legend="Podaj kwotę do przeliczenia"
+                  span="Kwota:"
+                  body={<Amount amount={amount} onChange={({ target }) => setAmount(target.value)} />}
+               />
+               <Button />StyledExternal
+               <Result result={result} />
             </FormBody>
 
-        )
+         );
 
-    } else {
-        return (<span>Ładowanie</span>)
-    }
-
+      case "loading":
+         return (
+            <ExternalScreen message={"Ładuję aktualne stawki walut z serwera zewnętrznego"} />
+         );
+      case "error":
+         return (
+            <ExternalScreen message={"Coś poszło nie tak, może nie masz internetu albo my coś popsuliśmy, odśwież stronę za chwilę"} />
+         );
+   }
 
 };
 
