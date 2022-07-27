@@ -1,4 +1,5 @@
 import { createGlobalStyle } from "styled-components";
+import background from "./wood_pattern.png";
 
 export const GlobalStyle = createGlobalStyle`
     html {
@@ -15,5 +16,6 @@ export const GlobalStyle = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         padding: 20px;
+        background-image: url(${background});
     }
 `;
